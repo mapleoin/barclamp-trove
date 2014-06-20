@@ -82,11 +82,11 @@ default['openstack']['db']['server_role'] = 'os-ops-database'
 default['openstack']['db']['service_type'] = 'mysql'
 # Database connection options. Should include starting '?'
 default['openstack']['db']['options'] = {
-   mysql: '?charset=utf8',
-   postgresql: '',
-   sqlite: '',
-   db2: '?charset=utf8',
-   nosql: ''
+   :mysql => '?charset=utf8',
+   :postgresql => '',
+   :sqlite => '',
+   :db2 => '?charset=utf8',
+   :nosql => ''
 }
 
 # Database used by the OpenStack Compute (Nova) service
@@ -199,18 +199,18 @@ default['openstack']['db']['root_user_key'] = 'mysqlroot'
 case node['platform_family']
 when 'rhel'
   default['openstack']['db']['python_packages'] = {
-    mysql: ['MySQL-python'],
-    db2: ['python-ibm-db', 'python-ibm-db-sa'],
-    postgresql: ['python-psycopg2']
+    :mysql => ['MySQL-python'],
+    :db2 => ['python-ibm-db', 'python-ibm-db-sa'],
+    :postgresql => ['python-psycopg2']
   }
 when 'suse'
   default['openstack']['db']['python_packages'] = {
-    mysql: ['python-mysql'],
-    postgresql: ['python-psycopg2']
+    :mysql => ['python-mysql'],
+    :postgresql => ['python-psycopg2']
   }
 when 'debian'
   default['openstack']['db']['python_packages'] = {
-    mysql: ['python-mysqldb'],
-    postgresql: ['python-psycopg2']
+    :mysql => ['python-mysqldb'],
+    :postgresql => ['python-psycopg2']
   }
 end
