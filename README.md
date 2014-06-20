@@ -43,6 +43,8 @@ subtree. Here are some useful commands to help work with it:
   $ git subtree push --prefix=chef/cookbooks/openstack-database-service/ cookbook master
   ```
 
+Do the same for `git@github.com:SUSE-Cloud/cookbook-openstack-common.git` `chef/cookbooks/openstack-common/`.
+
 Legals
 ------
 

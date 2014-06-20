@@ -4,7 +4,7 @@
 # Attributes:: default
 #
 # Copyright 2012-2013, AT&T Services, Inc.
-# Copyright 2013, SUSE Linux GmbH
+# Copyright 2013-2014, SUSE Linux GmbH
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -365,7 +365,7 @@ default['openstack']['endpoints']['database-api-bind']['bind_interface'] = nil
 default['openstack']['endpoints']['database-api']['host'] = node['openstack']['endpoints']['host']
 default['openstack']['endpoints']['database-api']['scheme'] = 'http'
 default['openstack']['endpoints']['database-api']['port'] = '8779'
-default['openstack']['endpoints']['database-api']['path'] = '/v1'
+default['openstack']['endpoints']['database-api']['path'] = '/v1.0'
 default['openstack']['endpoints']['database-api']['bind_interface'] = nil
 
 # Alternately, if you used some standardized DNS naming scheme, you could
