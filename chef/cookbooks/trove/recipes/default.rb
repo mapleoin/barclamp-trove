@@ -50,6 +50,7 @@ node.set['openstack']['database']['nova_proxy_tenant'] = keystone_settings['admi
 node.set['openstack']['use_databags'] = false
 node.set['openstack']['secret']['openstack_identity_bootstrap_token'] = {:token => keystone_settings['admin_token'] }
 node.set['openstack']['secret']['database']['db'] = node[:trove][:db][:password]
+node.set['openstack']['secret']['database']['user'] = keystone_settings['service_password']
 node.set['openstack']['secret']['database']['service'] = keystone_settings['service_password']
 node.set['openstack']['database']['service_user'] = keystone_settings['service_user']
 

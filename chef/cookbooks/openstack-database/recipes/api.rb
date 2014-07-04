@@ -72,7 +72,7 @@ template '/etc/trove/trove.conf' do
   notifies :restart, 'service[trove-api]', :immediately
 end
 
-admin_token = get_password('token', 'openstack_identity_bootstrap_token')
+service_pass = get_password('user', 'database')
 identity_admin_uri = endpoint('identity-admin')
 
 directory ::File.dirname(node['openstack']['database']['api']['auth']['cache_dir']) do
@@ -89,7 +89,7 @@ template '/etc/trove/api-paste.ini' do
   variables(
     :identity_admin_uri => identity_admin_uri,
     :identity_uri => identity_uri,
-    :admin_token => admin_token
+    :service_pass => service_pass
     )
 
   notifies :restart, 'service[trove-api]', :immediately
