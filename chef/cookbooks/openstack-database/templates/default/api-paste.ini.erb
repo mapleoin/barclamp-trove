@@ -21,7 +21,9 @@ auth_uri = <%= @identity_uri.to_s %>
 auth_host = <%= @identity_admin_uri.host %>
 auth_port = <%= @identity_admin_uri.port %>
 auth_protocol = <%= @identity_admin_uri.scheme %>
-admin_token = <%= @admin_token %>
+admin_user = <%= node['openstack']['database']['service_user'] %>
+admin_password = <%= @service_pass %>
+admin_tenant_name = <%= node['openstack']['database']['service_tenant_name'] %>
 # signing_dir is configurable, but the default behavior of the authtoken
 # middleware should be sufficient.  It will create a temporary directory
 # in the home directory for the user the trove process is running as.
